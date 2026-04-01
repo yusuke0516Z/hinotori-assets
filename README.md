@@ -1,0 +1,1 @@
+# hinotori-assets
