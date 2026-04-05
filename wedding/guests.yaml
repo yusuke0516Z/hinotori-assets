@@ -1,0 +1,26 @@
+# ゲストリスト
+# side: groom / bride
+# attendance: pending / attending / declined
+# meal: normal / vegetarian / allergy / other
+
+guests:
+  # --- 新郎側 ---
+  # ここにゲストを追加してください
+  # - name: "山田太郎"
+  #   furigana: "やまだたろう"
+  #   side: groom
+  #   relation: "友人"
+  #   attendance: pending
+  #   allergy: ""
+  #   notes: ""
+
+  # --- 新婦側 ---
+  # - name: "李明"
+  #   furigana: ""
+  #   side: bride
+  #   relation: "友人"
+  #   attendance: pending
+  #   allergy: ""
+  #   notes: ""
+
+  []

@@ -1,0 +1,148 @@
+# 予算管理
+# status: unpaid / paid / partial
+
+budget:
+  total_budget: null  # 予算上限（未設定）
+
+categories:
+  - name: "会場・挙式"
+    items:
+      - name: "会場使用料"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "挙式料"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "衣装"
+    items:
+      - name: "ウェディングドレス"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "タキシード"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "小物・アクセサリー"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "料理・飲物"
+    items:
+      - name: "料理"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "飲物"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "ウェディングケーキ"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "装花・装飾"
+    items:
+      - name: "装花"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "ブーケ"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "写真・映像"
+    items:
+      - name: "スナップ撮影"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "ビデオ撮影"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "前撮り"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "演出・音響"
+    items:
+      - name: "BGM・音響"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "司会"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "ペーパー・引出物"
+    items:
+      - name: "招待状"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "席次表・席札"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "引き出物"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "引き菓子"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "美容"
+    items:
+      - name: "ヘアメイク"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "ブライダルエステ"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+
+  - name: "その他"
+    items:
+      - name: "お車代・心付け"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""
+      - name: "ウェルカムボード"
+        estimated: null
+        actual: null
+        status: unpaid
+        notes: ""

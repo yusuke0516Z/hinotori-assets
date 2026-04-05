@@ -30,6 +30,13 @@ python3 wedding/wedding.py remind --days 30
 # 会場連絡先
 python3 wedding/wedding.py contact
 
+# ゲストリスト
+python3 wedding/wedding.py guests
+python3 wedding/wedding.py guests --list
+
+# 予算管理
+python3 wedding/wedding.py budget
+
 # ログ記録
 python3 wedding/wedding.py log -m "プランナーと打ち合わせ" -n "次回は5月中旬"
 ```
@@ -39,9 +46,16 @@ python3 wedding/wedding.py log -m "プランナーと打ち合わせ" -n "次回
 | ファイル | 内容 |
 |---------|------|
 | `config.yaml` | 挙式情報・会場連絡先・カップル情報 |
-| `tasks.yaml` | タスク一覧（7フェーズ） |
+| `tasks.yaml` | タスク一覧（7フェーズ・33タスク） |
+| `guests.yaml` | ゲストリスト |
+| `budget.yaml` | 見積もり・予算管理 |
 | `wedding.py` | メインCLI |
 | `logs/` | 月別活動ログ |
+
+## Google Calendar連携
+
+全タスクの期限がGoogle Calendar（yusuke0516z@gmail.com）に登録済み。
+優先度別に色分け: 赤=high / ピンク=medium / 黄=low
 
 ## タスクステータス
 

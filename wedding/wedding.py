@@ -33,6 +33,14 @@ def load_tasks():
     return load_yaml("tasks.yaml")
 
 
+def load_guests():
+    return load_yaml("guests.yaml")
+
+
+def load_budget():
+    return load_yaml("budget.yaml")
+
+
 # ─────────────────────────────────────────────
 # タイムライン計算
 # ─────────────────────────────────────────────
@@ -289,6 +297,92 @@ def cmd_contact(_args):
 
 
 # ─────────────────────────────────────────────
+# コマンド: guests
+# ─────────────────────────────────────────────
+
+def cmd_guests(args):
+    guests_data = load_guests()
+    guests = guests_data.get("guests") or []
+
+    if not guests:
+        print("ゲストが登録されていません")
+        print("guests.yaml にゲストを追加してください")
+        return
+
+    groom = [g for g in guests if g["side"] == "groom"]
+    bride = [g for g in guests if g["side"] == "bride"]
+
+    def count_att(guest_list, status):
+        return sum(1 for g in guest_list if g["attendance"] == status)
+
+    print("=" * 40)
+    print("  ゲストリスト")
+    print("=" * 40)
+    print(f"  合計: {len(guests)}名")
+    print(f"    新郎側: {len(groom)}名  新婦側: {len(bride)}名")
+    print()
+    print(f"  出欠状況:")
+    print(f"    出席: {count_att(guests, 'attending')}名")
+    print(f"    欠席: {count_att(guests, 'declined')}名")
+    print(f"    未回答: {count_att(guests, 'pending')}名")
+
+    if args.list:
+        for label, group in [("新郎側", groom), ("新婦側", bride)]:
+            if not group:
+                continue
+            print(f"\n--- {label} ({len(group)}名) ---")
+            for g in group:
+                att = {"pending": "未", "attending": "出", "declined": "欠"}.get(g["attendance"], "?")
+                allergy = f" [アレルギー: {g['allergy']}]" if g.get("allergy") else ""
+                print(f"  [{att}] {g['name']}（{g.get('relation', '')}）{allergy}")
+
+
+# ─────────────────────────────────────────────
+# コマンド: budget
+# ─────────────────────────────────────────────
+
+def cmd_budget(_args):
+    budget_data = load_budget()
+    total_budget = budget_data["budget"].get("total_budget")
+
+    total_estimated = 0
+    total_actual = 0
+    total_paid = 0
+
+    print("=" * 50)
+    print("  予算管理")
+    print("=" * 50)
+
+    if total_budget:
+        print(f"  予算上限: {total_budget:,}円")
+    else:
+        print("  予算上限: 未設定")
+    print()
+
+    for cat in budget_data["categories"]:
+        cat_est = sum(i["estimated"] or 0 for i in cat["items"])
+        cat_act = sum(i["actual"] or 0 for i in cat["items"])
+        if cat_est > 0 or cat_act > 0:
+            print(f"  {cat['name']}: 見積{cat_est:,}円 / 実費{cat_act:,}円")
+        else:
+            print(f"  {cat['name']}: 未入力")
+        total_estimated += cat_est
+        total_actual += cat_act
+        total_paid += sum(i["actual"] or 0 for i in cat["items"] if i["status"] == "paid")
+
+    print()
+    print(f"  見積合計: {total_estimated:,}円")
+    print(f"  実費合計: {total_actual:,}円")
+    print(f"  支払済み: {total_paid:,}円")
+    if total_budget and total_estimated:
+        diff = total_budget - total_estimated
+        if diff >= 0:
+            print(f"  予算残り: {diff:,}円")
+        else:
+            print(f"  \033[31m予算超過: {abs(diff):,}円\033[0m")
+
+
+# ─────────────────────────────────────────────
 # コマンド: log
 # ─────────────────────────────────────────────
 
@@ -343,6 +437,11 @@ def main():
 
     sub.add_parser("contact", help="会場連絡先表示")
 
+    p_guests = sub.add_parser("guests", help="ゲストリスト表示")
+    p_guests.add_argument("--list", action="store_true", help="全ゲスト名を一覧表示")
+
+    sub.add_parser("budget", help="予算サマリー表示")
+
     p_log = sub.add_parser("log", help="ログ追記")
     p_log.add_argument("--message", "-m", required=True, help="実施内容")
     p_log.add_argument("--notes", "-n", help="メモ")
@@ -358,6 +457,8 @@ def main():
         "update": cmd_update,
         "remind": cmd_remind,
         "contact": cmd_contact,
+        "guests": cmd_guests,
+        "budget": cmd_budget,
         "log": cmd_log,
     }
     commands[args.command](args)
