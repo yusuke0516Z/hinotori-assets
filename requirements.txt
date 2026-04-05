@@ -1,0 +1,4 @@
+pyyaml>=6.0
+# スプレッドシート同期（オプション）
+gspread>=5.0
+google-auth>=2.0

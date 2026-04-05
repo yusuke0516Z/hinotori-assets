@@ -1,0 +1,12 @@
+# 認証・機密情報
+wedding/credentials.json
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
