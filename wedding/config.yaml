@@ -28,3 +28,11 @@ venue:
     weekend: "9:00-19:00"
   closed: ["月", "火"]
   note: "打ち合わせは原則平日営業時間内"
+
+spreadsheet:
+  id: "1fhpPLRTrN6tUwA-f4XhTFLJZ2hYcFPSQOXth1Jx5cBU"
+  url: "https://docs.google.com/spreadsheets/d/1fhpPLRTrN6tUwA-f4XhTFLJZ2hYcFPSQOXth1Jx5cBU/"
+  sheets:
+    tasks: "タスク一覧"
+    guests: "招待客リスト"
+    budget: "見積シミュレーター"

@@ -5,7 +5,11 @@
 ## セットアップ
 
 ```bash
+# 基本（必須）
 pip install pyyaml
+
+# スプレッドシート同期（オプション）
+pip install gspread google-auth
 ```
 
 ## 使い方
@@ -50,7 +54,44 @@ python3 wedding/wedding.py log -m "プランナーと打ち合わせ" -n "次回
 | `guests.yaml` | ゲストリスト |
 | `budget.yaml` | 見積もり・予算管理 |
 | `wedding.py` | メインCLI |
+| `sheets_sync.py` | スプレッドシート同期 |
 | `logs/` | 月別活動ログ |
+
+## スプレッドシート同期
+
+タスク・ゲスト・予算データをGoogle Sheetsと双方向同期できます。
+
+### 初回セットアップ
+
+1. [Google Cloud Console](https://console.cloud.google.com/) でプロジェクト作成
+2. Google Sheets API を有効化
+3. サービスアカウントを作成し、JSONキーをダウンロード
+4. JSONキーを `wedding/credentials.json` に配置
+5. [スプレッドシート](https://docs.google.com/spreadsheets/d/1fhpPLRTrN6tUwA-f4XhTFLJZ2hYcFPSQOXth1Jx5cBU/) をサービスアカウントのメールアドレスに共有（編集者権限）
+
+### 使い方
+
+```bash
+# 同期状態を確認
+python3 wedding/sheets_sync.py status
+
+# YAML → スプレッドシートへ書き込み
+python3 wedding/sheets_sync.py push           # 全データ
+python3 wedding/sheets_sync.py push tasks     # タスクのみ
+python3 wedding/sheets_sync.py push guests    # ゲストのみ
+python3 wedding/sheets_sync.py push budget    # 予算のみ
+
+# スプレッドシート → YAMLへ取り込み
+python3 wedding/sheets_sync.py pull           # 全データ
+python3 wedding/sheets_sync.py pull tasks     # タスクのみ
+```
+
+### 同期の流れ
+
+1. `push` でYAMLデータをシートに書き込み（初回はシート自動作成）
+2. スプレッドシート上で編集（ステータス変更、ゲスト追加、金額入力等）
+3. `pull` でシートの変更をYAMLに取り込み
+4. `git commit` でバージョン管理
 
 ## Google Calendar連携
 
