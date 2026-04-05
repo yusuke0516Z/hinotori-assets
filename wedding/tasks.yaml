@@ -1,0 +1,312 @@
+# 結婚式準備タスク
+# ステータス: not_started | in_progress | done | skipped
+# 優先度: high | medium | low
+
+phases:
+  - id: phase_01
+    name: "初期準備（〜10ヶ月前）"
+    target_date: "2026-04-30"
+    tasks:
+      - id: t001
+        title: "会場本契約の確認"
+        status: done
+        priority: high
+        due_date: "2026-04-15"
+        notes: "T&G会場にて契約済み"
+        completed_date: "2026-04-01"
+
+      - id: t002
+        title: "プランナーとの初回打ち合わせ日程調整"
+        status: not_started
+        priority: high
+        due_date: "2026-04-30"
+        notes: "平日営業時間内で調整。次回打ち合わせ未確定"
+        completed_date: null
+
+      - id: t003
+        title: "ゲストリスト草案作成"
+        status: in_progress
+        priority: high
+        due_date: "2026-05-31"
+        notes: "スプレッドシートにて管理中"
+        completed_date: null
+
+      - id: t004
+        title: "結婚式のテーマ・コンセプト検討"
+        status: not_started
+        priority: medium
+        due_date: "2026-05-15"
+        notes: ""
+        completed_date: null
+
+      - id: t005
+        title: "結婚式準備の予算上限設定"
+        status: not_started
+        priority: high
+        due_date: "2026-04-30"
+        notes: ""
+        completed_date: null
+
+  - id: phase_02
+    name: "衣装・招待準備（6〜8ヶ月前）"
+    target_date: "2026-07-31"
+    tasks:
+      - id: t010
+        title: "ウェディングドレス試着・選定"
+        status: not_started
+        priority: high
+        due_date: "2026-06-30"
+        notes: ""
+        completed_date: null
+
+      - id: t011
+        title: "タキシード試着・選定"
+        status: not_started
+        priority: high
+        due_date: "2026-06-30"
+        notes: ""
+        completed_date: null
+
+      - id: t012
+        title: "招待状デザイン検討"
+        status: not_started
+        priority: medium
+        due_date: "2026-07-31"
+        notes: "日本語・中国語の二言語対応を検討"
+        completed_date: null
+
+      - id: t013
+        title: "前撮り（フォトウェディング）検討"
+        status: not_started
+        priority: medium
+        due_date: "2026-07-15"
+        notes: ""
+        completed_date: null
+
+      - id: t014
+        title: "ブライダルエステ開始検討"
+        status: not_started
+        priority: low
+        due_date: "2026-07-31"
+        notes: ""
+        completed_date: null
+
+  - id: phase_03
+    name: "詳細プランニング（4〜6ヶ月前）"
+    target_date: "2026-09-30"
+    tasks:
+      - id: t020
+        title: "料理メニュー試食・選定"
+        status: not_started
+        priority: medium
+        due_date: "2026-09-15"
+        notes: ""
+        completed_date: null
+
+      - id: t021
+        title: "装花・フラワーアレンジ打ち合わせ"
+        status: not_started
+        priority: medium
+        due_date: "2026-09-30"
+        notes: ""
+        completed_date: null
+
+      - id: t022
+        title: "写真・ビデオ撮影プラン確認"
+        status: not_started
+        priority: medium
+        due_date: "2026-08-31"
+        notes: ""
+        completed_date: null
+
+      - id: t023
+        title: "BGM・音楽リスト作成"
+        status: not_started
+        priority: low
+        due_date: "2026-09-30"
+        notes: ""
+        completed_date: null
+
+      - id: t024
+        title: "ウェディングケーキ選定"
+        status: not_started
+        priority: medium
+        due_date: "2026-09-30"
+        notes: ""
+        completed_date: null
+
+      - id: t025
+        title: "司会者の選定・打ち合わせ"
+        status: not_started
+        priority: medium
+        due_date: "2026-09-15"
+        notes: ""
+        completed_date: null
+
+      - id: t026
+        title: "余興・演出の企画"
+        status: not_started
+        priority: low
+        due_date: "2026-09-30"
+        notes: ""
+        completed_date: null
+
+  - id: phase_04
+    name: "招待状・詳細確定（2〜3ヶ月前）"
+    target_date: "2026-11-30"
+    tasks:
+      - id: t030
+        title: "招待状発送"
+        status: not_started
+        priority: high
+        due_date: "2026-11-15"
+        notes: "返信期限を挙式1ヶ月前（12月末）に設定"
+        completed_date: null
+
+      - id: t031
+        title: "挙式・披露宴の進行表作成"
+        status: not_started
+        priority: medium
+        due_date: "2026-11-30"
+        notes: ""
+        completed_date: null
+
+      - id: t032
+        title: "引き出物選定"
+        status: not_started
+        priority: medium
+        due_date: "2026-11-30"
+        notes: ""
+        completed_date: null
+
+      - id: t033
+        title: "ペーパーアイテム作成（席札・メニュー表等）"
+        status: not_started
+        priority: medium
+        due_date: "2026-11-30"
+        notes: ""
+        completed_date: null
+
+      - id: t034
+        title: "ウェルカムボード・装飾品準備"
+        status: not_started
+        priority: low
+        due_date: "2026-11-30"
+        notes: ""
+        completed_date: null
+
+      - id: t035
+        title: "主賓・乾杯挨拶の依頼"
+        status: not_started
+        priority: high
+        due_date: "2026-11-15"
+        notes: "スプレッドシートの挨拶集シート参照"
+        completed_date: null
+
+  - id: phase_05
+    name: "最終確認（1ヶ月前）"
+    target_date: "2026-12-31"
+    tasks:
+      - id: t040
+        title: "席次表確定"
+        status: not_started
+        priority: high
+        due_date: "2026-12-31"
+        notes: ""
+        completed_date: null
+
+      - id: t041
+        title: "最終人数確定・会場へ連絡"
+        status: not_started
+        priority: high
+        due_date: "2027-01-15"
+        notes: ""
+        completed_date: null
+
+      - id: t042
+        title: "ヘアメイクリハーサル"
+        status: not_started
+        priority: medium
+        due_date: "2027-01-15"
+        notes: ""
+        completed_date: null
+
+      - id: t043
+        title: "最終見積もり確認・支払い"
+        status: not_started
+        priority: high
+        due_date: "2027-01-20"
+        notes: ""
+        completed_date: null
+
+      - id: t044
+        title: "婚姻届の準備"
+        status: not_started
+        priority: medium
+        due_date: "2027-01-20"
+        notes: ""
+        completed_date: null
+
+  - id: phase_06
+    name: "直前準備（1〜2週間前）"
+    target_date: "2027-01-24"
+    tasks:
+      - id: t050
+        title: "最終リハーサル"
+        status: not_started
+        priority: high
+        due_date: "2027-01-25"
+        notes: ""
+        completed_date: null
+
+      - id: t051
+        title: "持ち物リスト最終確認"
+        status: not_started
+        priority: high
+        due_date: "2027-01-29"
+        notes: ""
+        completed_date: null
+
+      - id: t052
+        title: "お車代・心付け準備"
+        status: not_started
+        priority: medium
+        due_date: "2027-01-29"
+        notes: ""
+        completed_date: null
+
+      - id: t053
+        title: "お礼・挨拶文の準備"
+        status: not_started
+        priority: medium
+        due_date: "2027-01-29"
+        notes: ""
+        completed_date: null
+
+      - id: t054
+        title: "搬入物の最終チェック・梱包"
+        status: not_started
+        priority: high
+        due_date: "2027-01-30"
+        notes: ""
+        completed_date: null
+
+  - id: phase_07
+    name: "当日（2027-01-31）"
+    target_date: "2027-01-31"
+    tasks:
+      - id: t060
+        title: "当日チェックリスト確認"
+        status: not_started
+        priority: high
+        due_date: "2027-01-31"
+        notes: ""
+        completed_date: null
+
+      - id: t061
+        title: "会場入り・最終確認"
+        status: not_started
+        priority: high
+        due_date: "2027-01-31"
+        notes: "挙式10:00 披露宴11:00"
+        completed_date: null
