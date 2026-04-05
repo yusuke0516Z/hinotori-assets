@@ -1,4 +1,5 @@
-# 結婚式準備 - 設定ファイル
+# 結婚式準備 設定ファイル
+# 辰巳裕亮 & 陳瑞芳
 
 wedding:
   date: "2027-01-31"
@@ -6,44 +7,24 @@ wedding:
   ceremony_time: "10:00"
   reception_time: "11:00"
 
+couple:
+  groom:
+    name: "辰巳裕亮"
+    family: "辰巳家"
+  bride:
+    name: "陳瑞芳"
+    name_en: "Chen Ruifang"
+    family: "陳家"
+  planner: ""
+
 venue:
   name: "T&G (Take and Give Needs)"
-  portal_url: "https://www.tg-wn.com/user/the-steps-home"
+  portal: "https://www.tg-wn.com/user/the-steps-home"
   phone: "045-470-7470"
   email: "AQY@One-Heart.info"
-  email_subject_format: "1/31 辰巳家 ●家 担当：〇〇宛て"
-  email_notes:
-    - "メールアドレスはプランナーが共有で使用"
-    - "件名に「挙式日」「ご両家名」「担当者の名前」を記載"
-  business_hours:
+  email_subject: "1/31 辰巳家 陳家 担当：〇〇宛て"
+  hours:
     weekday: "12:00-18:00"
-    weekend_holiday: "9:00-19:00"
-  closed_days:
-    - "月曜日"
-    - "火曜日"
-  closed_days_note: "祝日を除く。休館日以外にも担当プランナーがお休みの場合は代理対応"
-  meeting_policy:
-    - "土日祝は結婚式担当のため、打ち合わせは原則平日"
-    - "働き方に関する法令遵守の取り組みとして、営業時間内に実施"
-  phone_notes:
-    - "お急ぎの場合はお電話でお問い合わせ"
-    - "担当プランナー離席時は伝言、内容によっては代理回答も可能"
-  reply_note: "月曜日・火曜日は休館日のため、お返事は水曜日"
-
-couple:
-  family_name_1: "辰巳"
-  family_name_2: ""  # 奥様の姓を記入
-  groom_name: "雄介"
-  bride_name: ""  # 奥様の名前を記入
-  planner_name: ""  # 担当プランナー名を記入
-
-spreadsheet:
-  url: "https://docs.google.com/spreadsheets/d/1fhpPLRTrN6tUwA-f4XhTFLJZ2hYcFPSQOXth1Jx5cBU/"
-  name: "結婚式準備_プロジェクト管理"
-  sheets:
-    - "一覧表"
-    - "見積シミュレーター"
-    - "招待客リスト"
-    - "カテゴリマスター"
-    - "タイムテーブル"
-    - "挨拶集"
+    weekend: "9:00-19:00"
+  closed: ["月", "火"]
+  note: "打ち合わせは原則平日営業時間内"
